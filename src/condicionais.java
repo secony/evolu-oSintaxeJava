@@ -1,21 +1,16 @@
 public class condicionais {
-     static void main(String[] args) {
+    static void main(String[] args) {
 
-        int anoNascimento = 2009;
+        boolean estudante = false;
+        int idade = 19;
 
-        if (anoNascimento < 2008){
+        if (estudante || idade <= 18) {
 
-            System.out.println("Você ja deve ter se alistado");
+            System.out.println("Meia entrada");
+
+        } else {
+            System.out.println("Inteira");
         }
-
-        else if (anoNascimento == 2008){
-
-            System.out.println("Se alistar esse ano");
-        }
-
-        else if (anoNascimento> 2008) {
-             System.out.println("Voce ainda nao vai se alistar");
-         }
 
     }
 }
