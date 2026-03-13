@@ -4,7 +4,7 @@ public class condicionais {
         boolean estudante = true;
         int idade = 19;
 
-        // apenas uma condição deve ser atendida
+        // duas condição devem ser atendidas
 
         if (estudante && idade <= 18) {
 
