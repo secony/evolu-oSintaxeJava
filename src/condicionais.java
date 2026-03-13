@@ -4,6 +4,8 @@ public class condicionais {
         boolean estudante = false;
         int idade = 19;
 
+        // apenas uma condição deve ser atendida
+
         if (estudante || idade <= 18) {
 
             System.out.println("Meia entrada");
