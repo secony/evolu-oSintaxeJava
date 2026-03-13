@@ -1,12 +1,12 @@
 public class condicionais {
     static void main(String[] args) {
 
-        boolean estudante = false;
+        boolean estudante = true;
         int idade = 19;
 
         // apenas uma condição deve ser atendida
 
-        if (estudante || idade <= 18) {
+        if (estudante && idade <= 18) {
 
             System.out.println("Meia entrada");
 
