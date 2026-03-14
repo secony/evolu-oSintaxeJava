@@ -28,7 +28,7 @@ public class condicionais {
 
         // PERGUNTA PARA VER SE É MAIOR DE IDADE
 
-        System.out.println("Qual sua idade? ");
+        System.out.print("Qual sua idade? ");
         int idade = input.nextInt();
 
         // VERIFICAÇÃO PARA VER SE É MAIOR DE IDADE
