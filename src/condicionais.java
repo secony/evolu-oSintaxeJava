@@ -1,12 +1,47 @@
+
+import java.util.Scanner;
+
 public class condicionais {
     static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 
-        boolean estudante = true;
-        int idade = 19;
+        // PERGUNTA PARA VER SE É ESTUDANTE
 
-        // duas condição devem ser atendidas
+        System.out.print("Você é estudante? (S/N): ");
+        String estuda = input.nextLine();
 
-        if (estudante && idade <= 18) {
+        // VARIAVEIS FORA DO LAÇO
+
+        boolean estudante = false;
+        boolean maiorIdade = false;
+
+        // VERIFICAÇÃO PARA VER SE É ESTUDANTE
+
+        if (estuda.equals("S")) {
+            estudante = true;
+
+        } else if (estuda.equals("N")) {
+            estudante = false;
+        } else {
+            System.out.println("inválido");
+        }
+
+        // PERGUNTA PARA VER SE É MAIOR DE IDADE
+
+        System.out.println("Qual sua idade? ");
+        int idade = input.nextInt();
+
+        // VERIFICAÇÃO PARA VER SE É MAIOR DE IDADE
+
+        if (idade >= 0 && idade <= 18) {
+            maiorIdade = true;
+        } else {
+            maiorIdade = false;
+        }
+
+        // MEIA SE UMA DAS CONDIÇÕES FOREM ATENDIDAS
+
+        if (estudante || maiorIdade) {
 
             System.out.println("Meia entrada");
 
