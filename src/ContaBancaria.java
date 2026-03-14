@@ -29,7 +29,7 @@ public class ContaBancaria {
             System.out.print("Digite seu saldo: ");
             double saldo = input.nextDouble();
             input.nextLine();
-        while (true) {
+
             System.out.println("""
                     
                     -------------------------------------------
@@ -41,7 +41,7 @@ public class ContaBancaria {
                     Saldo:            R$ %.2f
                     -------------------------------------------
                     """.formatted(nome, conta, saldo));
-
+        while (true) {
             System.out.println("""
                     
                     [1]- Verificar saldo
@@ -57,26 +57,37 @@ public class ContaBancaria {
             switch (operacao) {
 
                 case "1":
-                    System.out.println(saldo);
+                    System.out.println("Saldo atual: R$ " + saldo);
                     break;
 
                 case "2":
-                    System.out.print("qual valor quer adicionar? ");
+                    System.out.print("Qual valor quer adicionar? ");
                     double adicionado = input.nextDouble();
                     input.nextLine();
 
-                    System.out.println("R$: " + (saldo + adicionado));
+                    saldo += adicionado;
+                    System.out.println("Novo saldo: R$ " + saldo);
                     break;
 
                 case "3":
-                    System.out.print("qual valor quer transferir? ");
+                    System.out.print("Qual valor quer transferir? ");
                     double transferir = input.nextDouble();
                     input.nextLine();
-                    System.out.println("R$ " + (saldo - transferir));
+
+                    if (transferir > saldo) {
+                        System.out.println("Saldo insuficiente.");
+                    } else {
+                        saldo -= transferir;
+                        System.out.println("Novo saldo: R$ " + saldo);
+                    }
                     break;
 
                 case "4":
-                    break;
+                    System.out.println("Encerrando programa...");
+                    return;
+
+                default:
+                    System.out.println("Operação inválida.");
             }
 
         }
