@@ -10,16 +10,14 @@ public class EntradaDeDados {
         int motosTotal = 0;
         int caminhoneteTotal = 0;
         int caminhaoTotal = 0;
+        String tipo = "";
+        float valor = 0;
 
         Scanner input = new Scanner(System.in);
 
         while (valorTotal < 200) {
 
-            float valor = 0;
-            int carro = 0;
-            int moto = 0;
-            int caminhonete = 0;
-            int caminhao = 0;
+
 
             System.out.println("-----BEM VINDO AO ESTACIONAMENTO-----");
 
@@ -38,63 +36,55 @@ public class EntradaDeDados {
 
             System.out.print("Digite o seu veículo: ");
             int veiculo = input.nextInt();
-
-            System.out.print("Digite o tempo, em horas :");
-            float tempo = input.nextFloat();
-
+            input.nextLine();
 
             if (veiculo == 0) {
                 break;
-
-
-            } else if (veiculo == 1) {
-                carro ++;
-                System.out.println("Veículo adicionado com sucesso!");
-                System.out.println("Carros: " + carro + " !");
-                valor = tempo * 5;
-                System.out.println("Valor a ser pago: " + valor + ".");
-
-
-            } else if (veiculo == 2) {
-                moto += 1;
-                System.out.println("Veículo adicionado com sucesso!");
-                System.out.println("Motos: " + moto + " !");
-                valor = tempo *3;
-                System.out.println("Valor a ser pago: " + valor + ".");
-
-
-            } else if (veiculo == 3) {
-                caminhonete += 1;
-                System.out.println("Veículo adicionado com sucesso!");
-                System.out.println("Caminhonetes: " + caminhonete + " !");
-                valor = tempo * 8;
-                System.out.println("Valor a ser pago: " + valor + ".");
-
-
-            } else if (veiculo == 4) {
-                caminhao += 1;
-                System.out.println("Veículo adicionado com sucesso!");
-                System.out.println("Caminhões: " + caminhao + " !");
-                valor = tempo * 10;
-                System.out.println("Valor a ser pago: " + valor + ".");
-
-            } else {
-                System.out.println("Veículo invalido!!!");
             }
 
+            System.out.print("Digite o tempo, em horas :");
+            float tempo = input.nextFloat();
+            input.nextLine();
+
+            switch (veiculo) {
+                case 1:
+                    tipo = "carro";
+                    valor = tempo * 5;
+                    carrosTotal++;
+                    break;
+                case 2:
+                    tipo = "moto";
+                    valor = tempo * 3;
+                    motosTotal++;
+                    break;
+                case 3:
+                    tipo = "caminhonete";
+                    valor = tempo * 8;
+                    caminhoneteTotal++;
+                    break;
+                case 4:
+                    tipo = "caminhao";
+                    valor = tempo * 15;
+                    caminhaoTotal++;
+                    break;
+                default:
+                    tipo = "INVALIDO";
+                    valor = 0;
+                    break;
+
+            }
 
             valorTotal += valor;
-            carrosTotal += carro;
-            motosTotal += moto;
-            caminhoneteTotal += caminhonete;
-            caminhaoTotal += caminhao;
+
+
 
         }
+        System.out.print( tipo+ "adicionado, Valor a pagar: R$" + valor);
         System.out.println("Encerrando sistema...");
         System.out.println("Valor total arrecadado: " + valorTotal);
-        System.out.println("Carros totais:" + carrosTotal + "." );
-        System.out.println("Motos totais:" + motosTotal + "." );
-        System.out.println("Caminhonetes totais:" + caminhoneteTotal + "." );
-        System.out.println("Caminhões totais:" + caminhaoTotal + "." );
+        System.out.println("Carros totais:" + carrosTotal + ".");
+        System.out.println("Motos totais:" + motosTotal + ".");
+        System.out.println("Caminhonetes totais:" + caminhoneteTotal + ".");
+        System.out.println("Caminhões totais:" + caminhaoTotal + ".");
     }
 }
